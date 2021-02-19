@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Weapon/Weapon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Weapon/EnemyJavelin.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 4 )
+
+[node name="EnemyJavelin" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+region_rect = Rect2( 288, 176, 16, 32 )
+
+[node name="Spear" type="CollisionShape2D" parent="DamageArea" index="0"]
+position = Vector2( 8, 0 )
+shape = SubResource( 1 )

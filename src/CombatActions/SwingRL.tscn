@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/CombatAction/CombatActionAttack.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/CombatActions/CombatActionsINIT.tres" type="Animation" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Start"
+length = 0.8
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("WeaponRemoteTransform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -6, 0 ), Vector2( 6, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("WeaponRemoteTransform:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 45.0, 0.0, -90.0, 0.0 ]
+}
+
+[node name="SwingRL" instance=ExtResource( 1 )]
+_action_name = "swing_rl"
+
+[node name="CharacterRemoteTransform2D" parent="." index="0"]
+remote_path = NodePath("../Placeholders/CharacterPivot")
+
+[node name="WeaponRemoteTransform" parent="." index="1"]
+remote_path = NodePath("../Placeholders/WeaponPivot")
+update_position = true
+update_rotation = true
+
+[node name="Placeholders" parent="." index="2"]
+visible = true
+
+[node name="CharacterSprite" parent="Placeholders/CharacterPivot" index="0"]
+position = Vector2( 0, -16 )
+
+[node name="WeaponSprite" parent="Placeholders/WeaponPivot" index="0"]
+position = Vector2( 24, -8 )
+rotation = 1.5708
+
+[node name="AnimationPlayer" parent="." index="3"]
+anims/INIT = ExtResource( 2 )
+anims/Start = SubResource( 1 )

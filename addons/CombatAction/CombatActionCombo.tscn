@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/CombatAction/CombatAction.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/CombatAction/CombatActionCombo.gd" type="Script" id=2]
+[ext_resource path="res://src/CombatActions/SwingLR.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/CombatActions/SwingRL.tscn" type="PackedScene" id=4]
+
+[node name="CombatActionCombo" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="SwingLR" parent="." index="0" instance=ExtResource( 3 )]
+_input_event = "attack_light"
+
+[node name="SwingLR" parent="SwingLR" index="4" instance=ExtResource( 3 )]
+_input_event = "attack_light"
+
+[node name="SwingRL" parent="SwingLR/SwingLR" index="4" instance=ExtResource( 4 )]
+_input_event = "attack_light"

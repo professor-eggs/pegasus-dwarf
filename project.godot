@@ -1,0 +1,369 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Resource",
+"class": "Attack",
+"language": "GDScript",
+"path": "res://src/Weapon/Attack.gd"
+}, {
+"base": "Resource",
+"class": "AttackArray",
+"language": "GDScript",
+"path": "res://src/Weapon/AttackArray.gd"
+}, {
+"base": "Node2D",
+"class": "CombatAction",
+"language": "GDScript",
+"path": "res://addons/CombatAction/CombatAction.gd"
+}, {
+"base": "Node2D",
+"class": "CombatActionAttack",
+"language": "GDScript",
+"path": "res://addons/CombatAction/CombatActionAttack.gd"
+}, {
+"base": "CombatActionInterruption",
+"class": "CombatActionAttackInterruption",
+"language": "GDScript",
+"path": "res://addons/CombatAction/CombatActionAttackInterruption.gd"
+}, {
+"base": "CombatAction",
+"class": "CombatActionCombo",
+"language": "GDScript",
+"path": "res://addons/CombatAction/CombatActionCombo.gd"
+}, {
+"base": "CombatActionInterruption",
+"class": "CombatActionComboInterruption",
+"language": "GDScript",
+"path": "res://addons/CombatAction/CombatActionComboInterruption.gd"
+}, {
+"base": "Resource",
+"class": "CombatActionInterruption",
+"language": "GDScript",
+"path": "res://addons/CombatAction/CombatActionInterruption.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://src/Enemies/Steel/Steel.gd"
+}, {
+"base": "State",
+"class": "EnemyState",
+"language": "GDScript",
+"path": "res://src/StateMachine/EnemyState.gd"
+}, {
+"base": "Reference",
+"class": "GSAIAgentLocation",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/GSAIAgentLocation.gd"
+}, {
+"base": "GSAISteeringBehavior",
+"class": "GSAIArrive",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIArrive.gd"
+}, {
+"base": "GSAIGroupBehavior",
+"class": "GSAIAvoidCollisions",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIAvoidCollisions.gd"
+}, {
+"base": "GSAISteeringBehavior",
+"class": "GSAIBlend",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIBlend.gd"
+}, {
+"base": "GSAIGroupBehavior",
+"class": "GSAICohesion",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAICohesion.gd"
+}, {
+"base": "GSAIPursue",
+"class": "GSAIEvade",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIEvade.gd"
+}, {
+"base": "GSAIMatchOrientation",
+"class": "GSAIFace",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIFace.gd"
+}, {
+"base": "GSAISeek",
+"class": "GSAIFlee",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIFlee.gd"
+}, {
+"base": "GSAIArrive",
+"class": "GSAIFollowPath",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIFollowPath.gd"
+}, {
+"base": "GSAISteeringBehavior",
+"class": "GSAIGroupBehavior",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/GSAIGroupBehavior.gd"
+}, {
+"base": "GSAIProximity",
+"class": "GSAIInfiniteProximity",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Proximities/GSAIInfiniteProximity.gd"
+}, {
+"base": "GSAISpecializedAgent",
+"class": "GSAIKinematicBody2DAgent",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Agents/GSAIKinematicBody2DAgent.gd"
+}, {
+"base": "GSAISpecializedAgent",
+"class": "GSAIKinematicBody3DAgent",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Agents/GSAIKinematicBody3DAgent.gd"
+}, {
+"base": "GSAIMatchOrientation",
+"class": "GSAILookWhereYouGo",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAILookWhereYouGo.gd"
+}, {
+"base": "GSAISteeringBehavior",
+"class": "GSAIMatchOrientation",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIMatchOrientation.gd"
+}, {
+"base": "Reference",
+"class": "GSAIPath",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/GSAIPath.gd"
+}, {
+"base": "GSAISteeringBehavior",
+"class": "GSAIPriority",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIPriority.gd"
+}, {
+"base": "Reference",
+"class": "GSAIProximity",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Proximities/GSAIProximity.gd"
+}, {
+"base": "GSAISteeringBehavior",
+"class": "GSAIPursue",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIPursue.gd"
+}, {
+"base": "GSAIProximity",
+"class": "GSAIRadiusProximity",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Proximities/GSAIRadiusProximity.gd"
+}, {
+"base": "GSAISpecializedAgent",
+"class": "GSAIRigidBody2DAgent",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Agents/GSAIRigidBody2DAgent.gd"
+}, {
+"base": "GSAISpecializedAgent",
+"class": "GSAIRigidBody3DAgent",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Agents/GSAIRigidBody3DAgent.gd"
+}, {
+"base": "GSAISteeringBehavior",
+"class": "GSAISeek",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAISeek.gd"
+}, {
+"base": "GSAIGroupBehavior",
+"class": "GSAISeparation",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAISeparation.gd"
+}, {
+"base": "GSAISteeringAgent",
+"class": "GSAISpecializedAgent",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/Agents/GSAISpecializedAgent.gd"
+}, {
+"base": "GSAIAgentLocation",
+"class": "GSAISteeringAgent",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/GSAISteeringAgent.gd"
+}, {
+"base": "Reference",
+"class": "GSAISteeringBehavior",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/GSAISteeringBehavior.gd"
+}, {
+"base": "Reference",
+"class": "GSAITargetAcceleration",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/GSAITargetAcceleration.gd"
+}, {
+"base": "Reference",
+"class": "GSAIUtils",
+"language": "GDScript",
+"path": "res://addons/godot-steering-ai-framework-submodule-master/GSAIUtils.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://src/Player/Player.gd"
+}, {
+"base": "State",
+"class": "PlayerState",
+"language": "GDScript",
+"path": "res://src/StateMachine/PlayerState.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://src/StateMachine/State.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://src/StateMachine/StateMachine.gd"
+}, {
+"base": "Node2D",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://src/Player/Weapon/Weapon.gd"
+} ]
+_global_script_class_icons={
+"Attack": "",
+"AttackArray": "",
+"CombatAction": "",
+"CombatActionAttack": "",
+"CombatActionAttackInterruption": "",
+"CombatActionCombo": "",
+"CombatActionComboInterruption": "",
+"CombatActionInterruption": "",
+"Enemy": "",
+"EnemyState": "",
+"GSAIAgentLocation": "",
+"GSAIArrive": "",
+"GSAIAvoidCollisions": "",
+"GSAIBlend": "",
+"GSAICohesion": "",
+"GSAIEvade": "",
+"GSAIFace": "",
+"GSAIFlee": "",
+"GSAIFollowPath": "",
+"GSAIGroupBehavior": "",
+"GSAIInfiniteProximity": "",
+"GSAIKinematicBody2DAgent": "",
+"GSAIKinematicBody3DAgent": "",
+"GSAILookWhereYouGo": "",
+"GSAIMatchOrientation": "",
+"GSAIPath": "",
+"GSAIPriority": "",
+"GSAIProximity": "",
+"GSAIPursue": "",
+"GSAIRadiusProximity": "",
+"GSAIRigidBody2DAgent": "",
+"GSAIRigidBody3DAgent": "",
+"GSAISeek": "",
+"GSAISeparation": "",
+"GSAISpecializedAgent": "",
+"GSAISteeringAgent": "",
+"GSAISteeringBehavior": "",
+"GSAITargetAcceleration": "",
+"GSAIUtils": "",
+"Player": "",
+"PlayerState": "",
+"State": "",
+"StateMachine": "",
+"Weapon": ""
+}
+
+[application]
+
+config/name="pegasus-dwarf"
+run/main_scene="res://src/Levels/Level.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=256
+window/size/height=144
+window/size/resizable=false
+window/size/test_width=1600
+window/size/test_height=900
+window/dpi/allow_hidpi=true
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
+[input]
+
+move_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+attack_light={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":74,"unicode":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777221,"unicode":0,"echo":false,"script":null)
+ ]
+}
+jump={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":3,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+attack_heavy={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":75,"unicode":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="environment"
+2d_physics/layer_2="player"
+2d_physics/layer_3="enemies"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

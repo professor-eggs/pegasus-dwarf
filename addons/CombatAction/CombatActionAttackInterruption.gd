@@ -1,0 +1,3 @@
+extends CombatActionInterruption
+class_name CombatActionAttackInterruption
+
