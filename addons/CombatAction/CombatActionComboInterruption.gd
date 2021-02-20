@@ -1,3 +1,0 @@
-extends CombatActionInterruption
-class_name CombatActionComboInterruption
-

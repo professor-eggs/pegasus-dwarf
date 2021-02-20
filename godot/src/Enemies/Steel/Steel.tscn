@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://godot/src/StateMachine/StateMachine.gd" type="Script" id=1]
+[ext_resource path="res://godot/src/Enemies/Steel/Idle.gd" type="Script" id=2]
+[ext_resource path="res://godot/src/Enemies/Steel/Steel.gd" type="Script" id=3]
+[ext_resource path="res://godot/assets/knights.png" type="Texture" id=4]
+[ext_resource path="res://godot/src/Enemies/Steel/Attack.gd" type="Script" id=5]
+[ext_resource path="res://godot/src/Enemies/Steel/Wander.gd" type="Script" id=6]
+[ext_resource path="res://godot/src/Enemies/Steel/Chase.gd" type="Script" id=7]
+[ext_resource path="res://godot/src/Enemies/Steel/Die.gd" type="Script" id=8]
+[ext_resource path="res://godot/src/Enemies/Steel/Stun.gd" type="Script" id=9]
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[node name="Steel" type="KinematicBody2D"]
+collision_layer = 4
+script = ExtResource( 3 )
+
+[node name="Position2D" type="Position2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Position2D"]
+position = Vector2( 0, -16 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 80, 96, 32, 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -16 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( 1 )
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource( 2 )
+
+[node name="Wander" type="Node" parent="StateMachine"]
+script = ExtResource( 6 )
+
+[node name="Chase" type="Node" parent="StateMachine"]
+script = ExtResource( 7 )
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource( 5 )
+
+[node name="Stun" type="Node" parent="StateMachine"]
+script = ExtResource( 9 )
+
+[node name="Die" type="Node" parent="StateMachine"]
+script = ExtResource( 8 )

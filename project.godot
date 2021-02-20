@@ -9,235 +9,200 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Resource",
-"class": "Attack",
-"language": "GDScript",
-"path": "res://src/Weapon/Attack.gd"
-}, {
-"base": "Resource",
-"class": "AttackArray",
-"language": "GDScript",
-"path": "res://src/Weapon/AttackArray.gd"
-}, {
-"base": "Node2D",
+"base": "Node",
 "class": "CombatAction",
 "language": "GDScript",
-"path": "res://addons/CombatAction/CombatAction.gd"
+"path": "res://godot/addons/combat-actions/CombatAction.gd"
 }, {
-"base": "Node2D",
+"base": "CombatAction",
 "class": "CombatActionAttack",
 "language": "GDScript",
-"path": "res://addons/CombatAction/CombatActionAttack.gd"
-}, {
-"base": "CombatActionInterruption",
-"class": "CombatActionAttackInterruption",
-"language": "GDScript",
-"path": "res://addons/CombatAction/CombatActionAttackInterruption.gd"
+"path": "res://godot/addons/combat-actions/CombatActionAttack.gd"
 }, {
 "base": "CombatAction",
 "class": "CombatActionCombo",
 "language": "GDScript",
-"path": "res://addons/CombatAction/CombatActionCombo.gd"
-}, {
-"base": "CombatActionInterruption",
-"class": "CombatActionComboInterruption",
-"language": "GDScript",
-"path": "res://addons/CombatAction/CombatActionComboInterruption.gd"
-}, {
-"base": "Resource",
-"class": "CombatActionInterruption",
-"language": "GDScript",
-"path": "res://addons/CombatAction/CombatActionInterruption.gd"
+"path": "res://godot/addons/combat-actions/CombatActionCombo.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://src/Enemies/Steel/Steel.gd"
+"path": "res://godot/src/Enemies/Steel/Steel.gd"
 }, {
 "base": "State",
 "class": "EnemyState",
 "language": "GDScript",
-"path": "res://src/StateMachine/EnemyState.gd"
+"path": "res://godot/src/StateMachine/EnemyState.gd"
 }, {
 "base": "Reference",
 "class": "GSAIAgentLocation",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/GSAIAgentLocation.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/GSAIAgentLocation.gd"
 }, {
 "base": "GSAISteeringBehavior",
 "class": "GSAIArrive",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIArrive.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIArrive.gd"
 }, {
-"base": "GSAIGroupBehavior",
+"base": "Reference",
 "class": "GSAIAvoidCollisions",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIAvoidCollisions.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIAvoidCollisions.gd"
 }, {
-"base": "GSAISteeringBehavior",
+"base": "Reference",
 "class": "GSAIBlend",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIBlend.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIBlend.gd"
 }, {
-"base": "GSAIGroupBehavior",
+"base": "Reference",
 "class": "GSAICohesion",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAICohesion.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAICohesion.gd"
 }, {
-"base": "GSAIPursue",
+"base": "Reference",
 "class": "GSAIEvade",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIEvade.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIEvade.gd"
 }, {
-"base": "GSAIMatchOrientation",
+"base": "Reference",
 "class": "GSAIFace",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIFace.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIFace.gd"
 }, {
-"base": "GSAISeek",
+"base": "Reference",
 "class": "GSAIFlee",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIFlee.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIFlee.gd"
 }, {
-"base": "GSAIArrive",
+"base": "Reference",
 "class": "GSAIFollowPath",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIFollowPath.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIFollowPath.gd"
 }, {
-"base": "GSAISteeringBehavior",
+"base": "Reference",
 "class": "GSAIGroupBehavior",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/GSAIGroupBehavior.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/GSAIGroupBehavior.gd"
 }, {
 "base": "GSAIProximity",
 "class": "GSAIInfiniteProximity",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Proximities/GSAIInfiniteProximity.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Proximities/GSAIInfiniteProximity.gd"
 }, {
 "base": "GSAISpecializedAgent",
 "class": "GSAIKinematicBody2DAgent",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Agents/GSAIKinematicBody2DAgent.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Agents/GSAIKinematicBody2DAgent.gd"
 }, {
 "base": "GSAISpecializedAgent",
 "class": "GSAIKinematicBody3DAgent",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Agents/GSAIKinematicBody3DAgent.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Agents/GSAIKinematicBody3DAgent.gd"
 }, {
-"base": "GSAIMatchOrientation",
+"base": "Reference",
 "class": "GSAILookWhereYouGo",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAILookWhereYouGo.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAILookWhereYouGo.gd"
 }, {
-"base": "GSAISteeringBehavior",
+"base": "Reference",
 "class": "GSAIMatchOrientation",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIMatchOrientation.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIMatchOrientation.gd"
 }, {
 "base": "Reference",
 "class": "GSAIPath",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/GSAIPath.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/GSAIPath.gd"
 }, {
-"base": "GSAISteeringBehavior",
+"base": "Reference",
 "class": "GSAIPriority",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIPriority.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIPriority.gd"
 }, {
 "base": "Reference",
 "class": "GSAIProximity",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Proximities/GSAIProximity.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Proximities/GSAIProximity.gd"
 }, {
-"base": "GSAISteeringBehavior",
+"base": "Reference",
 "class": "GSAIPursue",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIPursue.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAIPursue.gd"
 }, {
 "base": "GSAIProximity",
 "class": "GSAIRadiusProximity",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Proximities/GSAIRadiusProximity.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Proximities/GSAIRadiusProximity.gd"
 }, {
 "base": "GSAISpecializedAgent",
 "class": "GSAIRigidBody2DAgent",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Agents/GSAIRigidBody2DAgent.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Agents/GSAIRigidBody2DAgent.gd"
 }, {
 "base": "GSAISpecializedAgent",
 "class": "GSAIRigidBody3DAgent",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Agents/GSAIRigidBody3DAgent.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Agents/GSAIRigidBody3DAgent.gd"
 }, {
-"base": "GSAISteeringBehavior",
+"base": "Reference",
 "class": "GSAISeek",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAISeek.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAISeek.gd"
 }, {
-"base": "GSAIGroupBehavior",
+"base": "Reference",
 "class": "GSAISeparation",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAISeparation.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Behaviors/GSAISeparation.gd"
 }, {
 "base": "GSAISteeringAgent",
 "class": "GSAISpecializedAgent",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/Agents/GSAISpecializedAgent.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/Agents/GSAISpecializedAgent.gd"
 }, {
 "base": "GSAIAgentLocation",
 "class": "GSAISteeringAgent",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/GSAISteeringAgent.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/GSAISteeringAgent.gd"
 }, {
 "base": "Reference",
 "class": "GSAISteeringBehavior",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/GSAISteeringBehavior.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/GSAISteeringBehavior.gd"
 }, {
 "base": "Reference",
 "class": "GSAITargetAcceleration",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/GSAITargetAcceleration.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/GSAITargetAcceleration.gd"
 }, {
 "base": "Reference",
 "class": "GSAIUtils",
 "language": "GDScript",
-"path": "res://addons/godot-steering-ai-framework-submodule-master/GSAIUtils.gd"
+"path": "res://godot/addons/godot-steering-ai-framework-submodule-master/GSAIUtils.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://src/Player/Player.gd"
+"path": "res://godot/src/Player/Player.gd"
 }, {
 "base": "State",
 "class": "PlayerState",
 "language": "GDScript",
-"path": "res://src/StateMachine/PlayerState.gd"
+"path": "res://godot/src/StateMachine/PlayerState.gd"
 }, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
-"path": "res://src/StateMachine/State.gd"
+"path": "res://godot/src/StateMachine/State.gd"
 }, {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
-"path": "res://src/StateMachine/StateMachine.gd"
-}, {
-"base": "Node2D",
-"class": "Weapon",
-"language": "GDScript",
-"path": "res://src/Player/Weapon/Weapon.gd"
+"path": "res://godot/src/StateMachine/StateMachine.gd"
 } ]
 _global_script_class_icons={
-"Attack": "",
-"AttackArray": "",
 "CombatAction": "",
 "CombatActionAttack": "",
-"CombatActionAttackInterruption": "",
 "CombatActionCombo": "",
-"CombatActionComboInterruption": "",
-"CombatActionInterruption": "",
 "Enemy": "",
 "EnemyState": "",
 "GSAIAgentLocation": "",
@@ -272,23 +237,22 @@ _global_script_class_icons={
 "Player": "",
 "PlayerState": "",
 "State": "",
-"StateMachine": "",
-"Weapon": ""
+"StateMachine": ""
 }
 
 [application]
 
 config/name="pegasus-dwarf"
-run/main_scene="res://src/Levels/Level.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://godot/src/Levels/Level.tscn"
+config/icon="res://godot/icon.png"
 
 [display]
 
 window/size/width=256
 window/size/height=144
 window/size/resizable=false
-window/size/test_width=1600
-window/size/test_height=900
+window/size/test_width=768
+window/size/test_height=432
 window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
@@ -363,7 +327,3 @@ attack_heavy={
 2d_physics/layer_1="environment"
 2d_physics/layer_2="player"
 2d_physics/layer_3="enemies"
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"
